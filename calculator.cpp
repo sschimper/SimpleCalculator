@@ -106,9 +106,9 @@ void Calculator::mathButtonPressed() {
 
 
 void Calculator::equalButtonPressed() {
-    double solution = 0.0;
     QString displayVal = ui->Display->text();
     double dblDisplayVal = displayVal.toDouble();
+    double solution = dblDisplayVal;
 
     if( addTrigger || subTrigger || multTrigger || divTrigger) {
 
@@ -152,12 +152,17 @@ void Calculator::changeNumberSign() {
 
 
 void Calculator::clearDisplay() {
+    divTrigger = false;
+    multTrigger = false;
+    addTrigger = false;
+    subTrigger = false;
     ui->Display->setText(QString::number(0.0));
 }
 
 
-void Calculator::getMemory() {
+double Calculator::getMemory() {
     ui->Display->setText(QString::number(memVal));
+    return memVal;
 }
 
 

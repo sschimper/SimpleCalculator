@@ -26,7 +26,7 @@ private slots:
     void changeNumberSign();
     void clearDisplay();
 
-    void getMemory();
+    double getMemory();
     void addMemory();
     void clearMemory();
 };
